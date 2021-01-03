@@ -1,0 +1,12 @@
+### 获取 todos
+GET http://localhost:3000/todos HTTP/1.1
+Content-Type: application/json
+
+### 新增 todo
+POST http://localhost:3000/todos HTTP/1.1
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "title": "Deno demo"
+}
