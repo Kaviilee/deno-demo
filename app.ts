@@ -15,6 +15,6 @@ console.log(`Listening on ${PORT}...`);
 
 try {
   await app.listen(`${HOST}:${PORT}`);
-} catch(e) {
-  console.log(e)
+} catch (e) {
+  console.log(e);
 }
