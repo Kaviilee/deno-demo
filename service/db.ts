@@ -3,7 +3,7 @@ import { Todo } from "../models/todo.ts";
 
 /**
  * 获取 Todo 数据
- * @returns Todo[]
+ * @returns todo数组
  */
 export const fetchTodo = async (): Promise<Todo[]> => {
   const data = await Deno.readFile(DB);
@@ -16,7 +16,7 @@ export const fetchTodo = async (): Promise<Todo[]> => {
 
 /**
  * 写入数据
- * @param data Todo[] 需要写入数据库的数组
+ * @param data todo数组
  */
 export const persistTodo = async (data: Todo[]): Promise<void> => {
   const encoder = new TextEncoder();

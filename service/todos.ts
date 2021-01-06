@@ -4,21 +4,30 @@ import { createId } from "../service/utils.ts";
 
 type TodoData = Pick<Todo, "userId" | "title" | "status">;
 
-// 获取 Todo 列表
+/**
+ * 获取Todo列表
+ * @returns {Promise<Todo[]>}
+ */
 export const getTodos = async (): Promise<Todo[]> => {
   const todos = await fetchTodo();
 
   return todos.sort((a, b) => a.title.localeCompare(b.title));
 };
 
-// 获取 todo 详情
+/**
+ * 获取todo详情
+ * @param {string} todoId
+ */
 export const getTodo = async (todoId: string): Promise<Todo | undefined> => {
   const todos = await fetchTodo();
 
   return todos.find((todo) => todo.id === todoId);
 };
 
-// 新建 todo
+/**
+ * 新建 todo
+ * @param todoData todo数据
+ */
 export const createTodo = async (todoData: TodoData): Promise<string> => {
   const todos = await fetchTodo();
 

@@ -1,8 +1,10 @@
 import { Response } from "https://deno.land/x/oak/mod.ts";
 
+type Continuation = () => Promise<void>;
+
 export default async (
   { response }: { response: Response },
-  next: () => Promise<void>,
+  next: Continuation,
 ) => {
   try {
     await next();
